@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "docker-compose up && npx @babel/node src/server/app.js &",
     "start": "webpack-dev-server --hot --inline --mode development"
   },
   "author": "Maxime Carey <maxime.carey@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "express": "^4.17.0"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.0",
+    "mongoose": "^5.5.12"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -21,7 +24,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
     "@hot-loader/react-dom": "^16.8.6",
-    "babel-loader": "^8.0.6",    
+    "babel-loader": "^8.0.6",
     "css-loader": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
