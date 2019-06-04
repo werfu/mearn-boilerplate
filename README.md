@@ -10,10 +10,19 @@ This is a A React/Webpack 4/Babel 7 application boiler plate supporting hot relo
 * Webpack-dev-server with hot-reload enabled
 * HtmlWebpackPlugin
 * React-hot-dom-loader
+* React-Router
 * SASS support
+* Mongoose with automatic REST route generation
+* Dockerized MongoDB using docker-compose
 
-## TODO
-* Add MongoDB / Mongoose REST API in the backend
-* Launch backend on start
-* Add React Router
-* Docker for MongoDB
+## Mongoose models and routing
+Models can be added to the exported array in the index.js of the models folder. Each entry needs to be formatted in this way:
+`{
+    route: 'routeName',
+    model: require('./yourmongoosemodelimporthere');
+    get: async (req, res) => { /* optional get handler */ }
+    getByID: async (req, res) => { /* optional get by id handler */ }
+    post: async (req, res) => { /* optional post handler */ }
+    put: async (req, res) => { /* optional put handler */ }
+    delete: async (req, res) => { /* optional delete handler */ }
+}`
